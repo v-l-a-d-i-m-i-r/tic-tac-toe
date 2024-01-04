@@ -1,0 +1,34 @@
+version: '3.1'
+
+services:
+  mongo:
+    container_name: tic-tac-toe-mongo
+    image: mongo:4.2
+    volumes:
+      - ./.data:/data/db
+    ports:
+      - 27017:27017
+
+  client:
+    container_name: tic-tac-toe-client
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    ports:
+      - 9000:9000
+    volumes:
+      - ./client/src/:/client/src/
+    command: npm run dev
+
+  server:
+    container_name: tic-tac-toe-server
+    env_file: ./.env
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
+      - 9229:9229
+    volumes:
+      - ./server/src/:/server/src/
+    command: npm run start:debug

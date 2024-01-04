@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #f0f1f3;
+}
+
+table {
+  margin: 0 auto;
+}
+
+table,
+td {
+  border-collapse: collapse;
+  border-style: groove;
+  border-width: 1px;
+  border-color: inherit;
+}
+
+td span,
+td a {
+  display: inline-block;
+  padding: 2px 5px;
+  min-width: 50%;
+}
+
+td span {
+  background-color: #f0f0f0;
+  color: #535353;
+}
+
+.date,
+.working_hours,
+.regular_price,
+.luxury_price,
+.regular_price_only {
+  text-align: center;
+}
+
+.date {
+  color: #ffffff;
+  background-color: #109e52;
+}
+
+.date,
+.working_hours,
+.regular_price_only {
+  width: 100%;
+}
+
+.name,
+.address {
+  width: 250px;
+  white-space: nowrap;
+  overflow-wrap: break-word;
+}
+
+.working_hours {
+  width: 122px;
+  background-color: #d1ecf7;
+}
+
+.regular_delivery_day {
+  .regular_price,
+  .regular_price_only {
+    background-color: #9add98;
+  }
+}
+
+.luxury_price {
+  background-color: #f9eeb1;
+}
+
+.luxury_delivery_day {
+  .luxury_price {
+    background-color: #fcc69a;
+  }
+}
